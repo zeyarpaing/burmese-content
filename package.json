@@ -1,6 +1,6 @@
 {
   "name": "figma-plugin-vite-preact",
-  "description": "A Figma plugin starter kit using Vite and Preact",
+  "description": "A minimal Figma plugin starter template using Vite and Preact",
   "author": "ZeyarPaing",
   "keywords": [
     "figma",
