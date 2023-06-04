@@ -24,15 +24,17 @@ export function App() {
         {/* @ts-ignore */}
         Count: <input id="count" value={count} onChange={(e) => setCount(+e.target?.value)} />
       </p>
-      <button id="create" onClick={create}>
-        Create
-      </button>
-      <button id="cancel" onClick={cancel}>
-        Cancel
-      </button>
-      <button id="fill" onClick={fill}>
-        Fill dummy text
-      </button>
+      <div class="btn-group">
+        <button id="create" onClick={create}>
+          Create
+        </button>
+        <button id="cancel" onClick={cancel}>
+          Cancel
+        </button>
+        <button id="fill" onClick={fill}>
+          Fill dummy text
+        </button>
+      </div>
     </>
   );
 }
