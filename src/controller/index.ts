@@ -23,8 +23,11 @@ figma.ui.onmessage = (msg) => {
         if (typeof wrapperNode.fontName != 'symbol') {
           font = wrapperNode.fontName;
           figma.loadFontAsync(font).then(() => {
-            wrapperNode.characters = 'Hello World';
-            figma.notify(`Filled 'Hello World'`);
+            const rand = Array(10)
+              .fill(0)
+              .map((_) => String.fromCharCode(97 + Math.floor(Math.random() * 26)));
+            wrapperNode.characters = rand.join('');
+            figma.notify(`Filled`);
           });
         }
       }
@@ -41,6 +44,7 @@ figma.ui.onmessage = (msg) => {
     }
     figma.currentPage.selection = nodes;
     figma.viewport.scrollAndZoomIntoView(nodes);
+    figma.notify(`Created`);
   } else {
     figma.closePlugin();
   }
