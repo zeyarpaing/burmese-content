@@ -1,0 +1,32 @@
+{
+  "name": "figma-plugin-vite-preact",
+  "description": "A Figma plugin starter kit using Vite and Preact",
+  "author": "ZeyarPaing",
+  "keywords": [
+    "figma",
+    "figma-plugin",
+    "figma-plugin-template",
+    "vite",
+    "preact"
+  ],
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "preact": "^10.13.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@figma/plugin-typings": "*",
+    "@preact/preset-vite": "^2.5.0",
+    "@types/node": "^20.2.5",
+    "rollup": "^3.23.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.3.9"
+  }
+}
