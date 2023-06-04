@@ -27,7 +27,6 @@ figma.ui.onmessage = (msg) => {
               .fill(0)
               .map((_) => String.fromCharCode(97 + Math.floor(Math.random() * 26)));
             wrapperNode.characters = rand.join('');
-            figma.notify(`Filled`);
           });
         }
       }
