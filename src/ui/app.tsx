@@ -1,22 +1,22 @@
 import { useState } from 'preact/hooks';
 import './app.css';
+import { action } from './utils';
 
 export function App() {
   const [count, setCount] = useState(0);
 
-  // useEffect(() => {
   function create() {
-    parent.postMessage({ pluginMessage: { type: 'create-rectangles', count } }, '*');
+    action('create-rectangles', count);
   }
 
   function cancel() {
-    parent.postMessage({ pluginMessage: { type: 'cancel' } }, '*');
+    action('cancel');
   }
 
   function fill() {
-    parent.postMessage({ pluginMessage: { type: 'fill-dummy-text' } }, '*');
+    action('fill-dummy-text');
   }
-  // });
+
   return (
     <>
       <h2>Rectangle Creator</h2>
@@ -31,7 +31,7 @@ export function App() {
         Cancel
       </button>
       <button id="fill" onClick={fill}>
-        Fill
+        Fill dummy text
       </button>
     </>
   );
