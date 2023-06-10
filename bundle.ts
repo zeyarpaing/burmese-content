@@ -26,7 +26,10 @@ export function replaceCss(html: string, scriptFilename: string, scriptCode: str
 
 const informIgnored = (filename: string) => console.info(`Asset ignored inlining: ${filename}`);
 
-export function bundlePlugin(): Plugin {
+type Options = {
+  hotReload?: boolean;
+};
+export function bundlePlugin({ hotReload }: Options): Plugin {
   return {
     name: 'vite:bundle-figma',
     config: _defaultConfig,
@@ -72,8 +75,9 @@ export function bundlePlugin(): Plugin {
         informIgnored(name);
       }
 
-      // exec hot-reload.sh
-      exec('sh ./hot-reload.sh');
+      if (hotReload) {
+        exec('sh ./hot-reload.sh');
+      }
     },
   };
 }

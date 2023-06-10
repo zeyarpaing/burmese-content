@@ -23,6 +23,11 @@ export default defineConfig(() => {
         },
       },
     },
-    plugins: [preact(), bundlePlugin()],
+    plugins: [
+      preact(),
+      bundlePlugin({
+        hotReload: true,
+      }),
+    ],
   };
 });

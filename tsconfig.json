@@ -27,5 +27,5 @@
       "./node_modules/@figma"
     ]
   },
-  "include": ["src"],
+  "include": ["src", "./"],
 }

@@ -38,12 +38,7 @@ export function App() {
           <Button id="cancel" onClick={cancel}>
             Cancel
           </Button>
-          <Button
-            id="fill"
-            onClick={() => {
-              window.location.reload();
-            }}
-          >
+          <Button id="fill" onClick={fill}>
             Fill dummy text
           </Button>
         </div>
