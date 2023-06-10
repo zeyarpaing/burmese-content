@@ -1,7 +1,7 @@
 {
   "name": "Burmese Content",
   "id": "1246763510166568557",
-  "api": "0.1.0",
+  "api": "1.0.0",
   "main": "dist/code.js",
   "capabilities": [],
   "enableProposedApi": false,
