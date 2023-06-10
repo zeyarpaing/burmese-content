@@ -1,3 +1,3 @@
-# burmese-placeholder
+# burmese-content
 
-Figma plugin for generating placeholder text in Burmese language
+Figma plugin for generating contnet in Burmese language

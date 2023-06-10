@@ -1,15 +1,16 @@
 {
-  "name": "burmese-placeholder",
-  "description": "Figma plugin for generating placeholder text in Burmese language",
+  "name": "burmese-content",
+  "description": "Figma plugin for generating content in Burmese language",
   "author": "ZeyarPaing",
   "keywords": [
     "figma",
     "figma-plugin",
     "burmese",
-    "placeholder"
+    "content",
+    "burmese-content"
   ],
   "private": true,
-  "version": "1.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite build --watch",
