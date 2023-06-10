@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-echo "Checking if Figma is running..."
+
 osascript <<'EOF'
 if application "Figma" is running then
     tell application "Figma" to activate

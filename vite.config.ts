@@ -26,6 +26,8 @@ export default defineConfig(() => {
     plugins: [
       preact(),
       bundlePlugin({
+        /* This will change window focus to figma.app after file changes. 
+        This will only work in macOS */
         hotReload: true,
       }),
     ],

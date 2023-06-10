@@ -19,27 +19,28 @@ export function App() {
 
   return (
     <>
-      <main class="w-full h-full">
-        <h2 class="dark:text-teal-500 text-blue-500 font-bold">Rectangle Creator</h2>
-        <label>
+      <main class="w-full h-full p-6">
+        <h1 class="dark:text-teal-500 text-blue-500 font-bold text-xl mb-2">Rectangle Creator</h1>
+        <label class="text-sm">
           Ractangle count:{' '}
           <input
-            class="rounded"
+            class="rounded text-md w-full px-3 py-2 text-black"
+            type="number"
             id="count"
             value={count}
             //  @ts-ignore
             onChange={(e) => setCount(+e.target?.value)}
           />
         </label>
-        <div class="flex gap-2 items-center flex-wrap justify-center">
-          <Button id="create" onClick={create}>
-            Create
-          </Button>
+        <div class="flex gap-2 items-center  justify-center my-2">
           <Button id="cancel" onClick={cancel}>
-            Cancel
+            Close
           </Button>
           <Button id="fill" onClick={fill}>
-            Fill dummy text
+            Random
+          </Button>
+          <Button id="create" onClick={create}>
+            Create
           </Button>
         </div>
       </main>

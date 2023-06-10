@@ -13,7 +13,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "vite build --watch",
+    "dev": " tsc && vite build --watch",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
