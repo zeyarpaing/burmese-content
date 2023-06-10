@@ -36,8 +36,9 @@ export default defineConfig(() => {
         hotReload: true,
         remoteAction: {
           name: '$action',
-          path: '@/controller',
+          actionPath: '@/controller',
           handlerPath: '@/ui/utils',
+          include: 'src/ui',
         },
       }),
     ],

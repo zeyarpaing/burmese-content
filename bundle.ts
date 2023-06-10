@@ -33,8 +33,9 @@ const informIgnored = (filename: string) => console.info(`Asset ignored inlining
 type Options = {
   hotReload?: boolean;
   remoteAction?: {
+    include: string;
     name: string;
-    path: string;
+    actionPath: string;
     handlerPath: string;
   };
 };
@@ -44,8 +45,8 @@ export function bundlePlugin({ hotReload, remoteAction }: Options): Plugin {
     config: _defaultConfig,
     enforce: 'post',
     transform(code, id) {
-      if (remoteAction && id.includes('src/ui/app.tsx')) {
-        const importReg = new RegExp(`import .* from "${remoteAction.path}";`, 'g');
+      if (remoteAction && id.includes(remoteAction.include)) {
+        const importReg = new RegExp(`import .* from "${remoteAction.actionPath}";`, 'g');
         let transformed = code.replace(
           importReg,
           `import { ${remoteAction.name} } from "${remoteAction.handlerPath}";`
