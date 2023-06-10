@@ -1,2 +1,3 @@
-# figma-plugin-vite-preact
-A minimal Figma plugin starter template using Vite and Preact
+# burmese-placeholder
+
+Figma plugin for generating placeholder text in Burmese language
