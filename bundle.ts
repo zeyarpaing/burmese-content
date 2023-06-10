@@ -1,5 +1,6 @@
 import { UserConfig, Plugin } from 'vite';
 import { OutputChunk, OutputAsset } from 'rollup';
+import { exec } from 'child_process';
 
 const regScript = (fileName: string) =>
   new RegExp(`<script([^>]*?) src="[./]*${fileName}"([^>]*)></script>`);
@@ -70,6 +71,9 @@ export function bundlePlugin(): Plugin {
       )) {
         informIgnored(name);
       }
+
+      // exec hot-reload.sh
+      exec('sh ./hot-reload.sh');
     },
   };
 }

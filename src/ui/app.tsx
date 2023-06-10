@@ -1,6 +1,6 @@
 import { useState } from 'preact/hooks';
-import './app.css';
 import { action } from './utils';
+import { Button } from './components/Button';
 
 export function App() {
   const [count, setCount] = useState(0);
@@ -19,22 +19,35 @@ export function App() {
 
   return (
     <>
-      <h2 class="dark:text-teal-400 text-blue-500 font-bold">Rectangle Creator</h2>
-      <p>
-        {/* @ts-ignore */}
-        Count: <input id="count" value={count} onChange={(e) => setCount(+e.target?.value)} />
-      </p>
-      <div class="btn-group">
-        <button id="create" onClick={create}>
-          Create
-        </button>
-        <button id="cancel" onClick={cancel}>
-          Cancel
-        </button>
-        <button id="fill" onClick={fill}>
-          Fill dummy text
-        </button>
-      </div>
+      <main class="w-full h-full">
+        <h2 class="dark:text-teal-500 text-blue-500 font-bold">Rectangle Creator</h2>
+        <label>
+          Ractangle count:{' '}
+          <input
+            class="rounded"
+            id="count"
+            value={count}
+            //  @ts-ignore
+            onChange={(e) => setCount(+e.target?.value)}
+          />
+        </label>
+        <div class="flex gap-2 items-center flex-wrap justify-center">
+          <Button id="create" onClick={create}>
+            Create
+          </Button>
+          <Button id="cancel" onClick={cancel}>
+            Cancel
+          </Button>
+          <Button
+            id="fill"
+            onClick={() => {
+              window.location.reload();
+            }}
+          >
+            Fill dummy text
+          </Button>
+        </div>
+      </main>
     </>
   );
 }
