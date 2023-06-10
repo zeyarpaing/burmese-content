@@ -1,13 +1,12 @@
 {
-  "name": "figma-plugin-vite-preact",
-  "description": "A minimal Figma plugin starter template using Vite and Preact",
+  "name": "burmese-placeholder",
+  "description": "Figma plugin for generating placeholder text in Burmese language",
   "author": "ZeyarPaing",
   "keywords": [
     "figma",
     "figma-plugin",
-    "figma-plugin-template",
-    "vite",
-    "preact"
+    "burmese",
+    "placeholder"
   ],
   "private": true,
   "version": "1.0.0",
