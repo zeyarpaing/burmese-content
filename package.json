@@ -25,7 +25,10 @@
     "@figma/plugin-typings": "*",
     "@preact/preset-vite": "^2.5.0",
     "@types/node": "^20.2.5",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24",
     "rollup": "^3.23.0",
+    "tailwindcss": "^3.3.2",
     "typescript": "^5.0.2",
     "vite": "^4.3.9"
   }

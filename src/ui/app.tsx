@@ -19,7 +19,7 @@ export function App() {
 
   return (
     <>
-      <h2>Rectangle Creator</h2>
+      <h2 class="dark:text-teal-400 text-blue-500 font-bold">Rectangle Creator</h2>
       <p>
         {/* @ts-ignore */}
         Count: <input id="count" value={count} onChange={(e) => setCount(+e.target?.value)} />
