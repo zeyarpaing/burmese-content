@@ -6,6 +6,10 @@ const regScript = (fileName: string) =>
   new RegExp(`<script([^>]*?) src="[./]*${fileName}"([^>]*)></script>`);
 const regCss = (fileName: string) => new RegExp(`<link[^>]*? href="[./]*${fileName}"[^>]*?>`);
 
+function escapeRegexp(text: string) {
+  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
+}
+
 export function replaceScript(html: string, scriptFilename: string, scriptCode: string): string {
   const preloadMarker = /"__VITE_PRELOAD__"/g;
   const newCode = scriptCode.replace(preloadMarker, 'void 0');
@@ -28,12 +32,38 @@ const informIgnored = (filename: string) => console.info(`Asset ignored inlining
 
 type Options = {
   hotReload?: boolean;
+  remoteAction?: {
+    name: string;
+    path: string;
+    handlerPath: string;
+  };
 };
-export function bundlePlugin({ hotReload }: Options): Plugin {
+export function bundlePlugin({ hotReload, remoteAction }: Options): Plugin {
   return {
     name: 'vite:bundle-figma',
     config: _defaultConfig,
     enforce: 'post',
+    transform(code, id) {
+      if (remoteAction && id.includes('src/ui/app.tsx')) {
+        const importReg = new RegExp(`import .* from "${remoteAction.path}";`, 'g');
+        let transformed = code.replace(
+          importReg,
+          `import { ${remoteAction.name} } from "${remoteAction.handlerPath}";`
+        );
+
+        const actionReg = new RegExp(
+          `${escapeRegexp(
+            remoteAction.name
+          )}\\.(?<action>[a-zA-Z0-9]+)\\((?<payload>[a-zA-Z0-9]*)\\);`,
+          'gm'
+        );
+        transformed = transformed.replace(
+          actionReg,
+          (_, action, payload) => `${remoteAction.name}('${action}', ${payload || 'undefined'});`
+        );
+        return transformed;
+      }
+    },
     generateBundle: (_, bundle) => {
       const jsExtensionTest = /\.[mc]?js$/;
       const htmlFiles = Object.keys(bundle).filter((i) => i.endsWith('.html'));

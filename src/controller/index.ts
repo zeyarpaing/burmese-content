@@ -1,18 +1,13 @@
 // This shows the HTML page in "ui.html".
 figma.showUI(__html__, {
-  width: 300,
-  height: 600,
-  title: 'Vite-Preact Plugin',
+  width: 320,
+  height: 530,
+  title: 'Burmese Content',
   themeColors: true,
 });
 
-// Calls to "parent.postMessage" from within the HTML page will trigger this
-// callback. The callback will be passed the "pluginMessage" property of the
-// posted message.
-figma.ui.onmessage = (msg) => {
-  // One way of distinguishing between different types of messages sent from
-  // your HTML page is to use an object with a "type" property like this.
-  if (msg.type === 'fill-dummy-text') {
+export const $action = {
+  fillDummyText: () => {
     console.log('filling dummy text');
     figma.currentPage.selection.forEach((node) => {
       var font = null;
@@ -31,9 +26,10 @@ figma.ui.onmessage = (msg) => {
         }
       }
     });
-  } else if (msg.type === 'create-rectangles') {
+  },
+  createRectangles: (payload: number) => {
     const nodes: SceneNode[] = [];
-    const count = msg.payload;
+    const count = payload;
     for (let i = 0; i < count; i++) {
       const rect = figma.createRectangle();
       rect.x = i * 180;
@@ -44,10 +40,15 @@ figma.ui.onmessage = (msg) => {
     figma.currentPage.selection = nodes;
     figma.viewport.scrollAndZoomIntoView(nodes);
     figma.notify(`Created`);
-  } else {
-    figma.closePlugin();
-  }
+  },
+} as const;
 
-  // Make sure to close the plugin when you're done. Otherwise the plugin will
-  // keep running, which shows the cancel button at the bottom of the screen.
+figma.ui.onmessage = (msg: {
+  type: keyof typeof $action;
+  payload: Parameters<(typeof $action)[keyof typeof $action]>;
+}) => {
+  // @ts-ignore
+  $action[msg.type](msg.payload);
 };
+
+export type Actions = typeof $action;

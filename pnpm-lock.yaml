@@ -4,6 +4,7 @@ specifiers:
   '@babel/core': ^7.12.10
   '@figma/plugin-typings': '*'
   '@preact/preset-vite': ^2.5.0
+  '@preact/signals': ^1.1.3
   '@types/node': ^20.2.5
   autoprefixer: ^10.4.14
   postcss: ^8.4.24
@@ -14,6 +15,7 @@ specifiers:
   vite: ^4.3.9
 
 dependencies:
+  '@preact/signals': 1.1.3_preact@10.15.1
   preact: 10.15.1
 
 devDependencies:
@@ -561,6 +563,19 @@ packages:
       - preact
       - supports-color
     dev: true
+
+  /@preact/signals-core/1.3.0:
+    resolution: {integrity: sha512-M+M3ZOtd1dtV/uasyk4SZu1vbfEJ4NeENv0F7F12nijZYedB5wSgbtZcuACyssnTznhF4ctUyrR0dZHuHfyWKA==}
+    dev: false
+
+  /@preact/signals/1.1.3_preact@10.15.1:
+    resolution: {integrity: sha512-N09DuAVvc90bBZVRwD+aFhtGyHAmJLhS3IFoawO/bYJRcil4k83nBOchpCEoS0s5+BXBpahgp0Mjf+IOqP57Og==}
+    peerDependencies:
+      preact: 10.x
+    dependencies:
+      '@preact/signals-core': 1.3.0
+      preact: 10.15.1
+    dev: false
 
   /@prefresh/babel-plugin/0.5.0:
     resolution: {integrity: sha512-joAwpkUDwo7ZqJnufXRGzUb+udk20RBgfA8oLPBh5aJH2LeStmV1luBfeJTztPdyCscC2j2SmZ/tVxFRMIxAEw==}

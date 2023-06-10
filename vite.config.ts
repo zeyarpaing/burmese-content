@@ -10,6 +10,11 @@ export default defineConfig(() => {
       port: 4000,
       host: true,
     },
+    resolve: {
+      alias: {
+        '@': resolve(__dirname, 'src'),
+      },
+    },
     build: {
       assetsDir: '',
       cssCodeSplit: false,
@@ -29,6 +34,11 @@ export default defineConfig(() => {
         /* This will change window focus to figma.app after file changes. 
         This will only work in macOS */
         hotReload: true,
+        remoteAction: {
+          name: '$action',
+          path: '@/controller',
+          handlerPath: '@/ui/utils',
+        },
       }),
     ],
   };

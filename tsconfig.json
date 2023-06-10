@@ -18,13 +18,14 @@
 
     /* Linting */
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    // "noUnusedLocals": 'warn',
+    // "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-    // "paths": {
-    //   "@/*": ["src/*"],
-    // },
+    "paths": {
+      "@/*": ["src/*"],
+    },
+
     /* Figma */
     "typeRoots": [
       "./node_modules/@types",
