@@ -7,8 +7,8 @@ figma.showUI(__html__, {
 });
 
 export const $action = {
-  fillDummyText: () => {
-    console.log('filling dummy text');
+  fillText: (payload: string[]) => {
+    const length = payload.length;
     figma.currentPage.selection.forEach((node) => {
       var font = null;
       let wrapperNode: TextNode;
@@ -18,10 +18,7 @@ export const $action = {
         if (typeof wrapperNode.fontName != 'symbol') {
           font = wrapperNode.fontName;
           figma.loadFontAsync(font).then(() => {
-            const rand = Array(10)
-              .fill(0)
-              .map((_) => String.fromCharCode(97 + Math.floor(Math.random() * 26)));
-            wrapperNode.characters = rand.join('');
+            wrapperNode.characters = payload[Math.floor(Math.random() * length)];
           });
         }
       }

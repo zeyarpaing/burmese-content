@@ -1,50 +1,43 @@
 import { $action } from '@/controller';
 import { Button } from '@/ui/components/Button';
 import Navbar from '@/ui/components/Navbar';
+import { contentTypes } from '@/ui/utils';
+import { activeTab } from '@/ui/utils/states';
 import { useState } from 'preact/hooks';
 
 export function App() {
   const [count, setCount] = useState(0);
 
   function create() {
-    $action.createRectangles(count);
+    $action.createRectangles(0);
   }
 
   function cancel() {
     console.log('messenger');
   }
 
-  function fill() {
-    $action.fillDummyText();
+  function fillText(content: string[]) {
+    $action.fillText(content);
   }
 
   return (
     <>
       <Navbar />
-      <main class="w-full h-full p-6">
-        <h1 class="dark:text-teal-500 text-blue-500 font-bold text-xl mb-2">Rectangle Creator</h1>
-        <label class="text-sm">
-          Ractangle count:{' '}
-          <input
-            class="rounded text-md w-full px-3 py-2 text-black"
-            type="number"
-            id="count"
-            value={count}
-            //  @ts-ignore
-            onChange={(e) => setCount(+e.target?.value)}
-          />
-        </label>
-        <div class="flex gap-2 items-center  justify-center my-2">
-          <Button id="cancel" onClick={cancel}>
-            Close
-          </Button>
-          <Button id="fill" onClick={fill}>
-            Random
-          </Button>
-          <Button id="create" onClick={create}>
-            Create
-          </Button>
-        </div>
+      <main class="w-full h-full p-2">
+        <section>
+          {contentTypes
+            .filter((ct) => ct.group?.includes(activeTab.value))
+            .map((content) => (
+              <button
+                class="w-full p-2 text-left text-xs hover:bg-gray-200/50 rounded"
+                onClick={() => fillText(content.contents)}
+                key={content.name}
+              >
+                <p class="font-bold">{content.name}</p>
+                <p>{content.description}</p>
+              </button>
+            ))}
+        </section>
       </main>
     </>
   );
