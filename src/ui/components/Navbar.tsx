@@ -5,11 +5,11 @@ type Props = {};
 export default function Navbar({}: Props) {
   return (
     <nav class="sticky top-0 w-full">
-      <ul class="flex [&>li>button]:p-2 border-b justify-between px-2">
+      <ul class="flex justify-between px-2 py-1">
         {tabs.map((tab) => (
           <li>
             <button
-              class={`${activeTab.value === tab ? 'bg-slate-700' : ''}`}
+              class={`px-4 border rounded-md py-1.5 ${activeTab.value === tab ? 'text-neutral-900 bg-amber-300 border-amber-400' : ' border-transparent '}`}
               onClick={() => (activeTab.value = tab)}
             >
               {tab}
@@ -17,7 +17,7 @@ export default function Navbar({}: Props) {
           </li>
         ))}
       </ul>
-      <section class="border-b relative">
+      <section class="mx-2 relative">
         <svg
           class="absolute top-1/2 -translate-y-1/2 left-0 mx-2"
           width="20"
@@ -32,7 +32,7 @@ export default function Navbar({}: Props) {
           />
         </svg>
 
-        <input type="text" class="pl-10 py-2 bg-transparent w-full" placeholder="Search" />
+        <input type="text" class="border border-neutral-400/50 rounded-md pl-10 py-2 bg-transparent w-full" placeholder="Search" />
       </section>
     </nav>
   );

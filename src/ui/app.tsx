@@ -6,16 +6,6 @@ import { activeTab } from '@/ui/utils/states';
 import { useState } from 'preact/hooks';
 
 export function App() {
-  const [count, setCount] = useState(0);
-
-  function create() {
-    $action.createRectangles(0);
-  }
-
-  function cancel() {
-    console.log('messenger');
-  }
-
   function fillText(content: string[]) {
     $action.fillText(content);
   }

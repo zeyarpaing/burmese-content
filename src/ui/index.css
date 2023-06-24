@@ -8,10 +8,10 @@
   }
 
   .inverse {
-    @apply dark:text-black text-gray-100;
+    @apply dark:text-neutral-900 text-neutral-100;
   }
 
   *:focus-visible {
-    @apply outline-none ring-2 ring-blue-500;
+    @apply outline-none ring-2 ring-amber-400;
   }
 }

@@ -26,4 +26,10 @@ export const contentTypes: ContentType[] = [
     contents: mmNames,
     group: ['Home', 'Text'],
   },
+  {
+    name: 'Lorem ipsum (မြန်မာ)',
+    description: 'ကျပန်းမြန်မာစာ',
+    contents: [],
+    group: ['Home', 'Text'],
+  },
 ];
