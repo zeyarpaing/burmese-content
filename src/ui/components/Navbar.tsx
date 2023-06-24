@@ -4,12 +4,16 @@ import { activeTab } from '@/ui/utils/states';
 type Props = {};
 export default function Navbar({}: Props) {
   return (
-    <nav class="sticky top-0 w-full">
+    <nav class="sticky top-0 w-full dark:bg-neutral-800 bg-white">
       <ul class="flex justify-between px-2 py-1">
         {tabs.map((tab) => (
           <li>
             <button
-              class={`px-4 border rounded-md py-1.5 ${activeTab.value === tab ? 'text-neutral-900 bg-amber-300 border-amber-400' : ' border-transparent '}`}
+              class={`px-4 border rounded-md py-1.5 ${
+                activeTab.value === tab
+                  ? 'text-neutral-900 bg-amber-300 border-amber-400'
+                  : ' border-transparent hover:bg-amber-200/30'
+              }`}
               onClick={() => (activeTab.value = tab)}
             >
               {tab}
@@ -32,7 +36,11 @@ export default function Navbar({}: Props) {
           />
         </svg>
 
-        <input type="text" class="border border-neutral-400/50 rounded-md pl-10 py-2 bg-transparent w-full" placeholder="Search" />
+        <input
+          type="text"
+          class="border border-neutral-400/50 rounded-md pl-10 py-2 bg-transparent w-full"
+          placeholder="Search"
+        />
       </section>
     </nav>
   );
