@@ -1,6 +1,6 @@
 // This shows the HTML page in "ui.html".
 figma.showUI(__html__, {
-  width: 320,
+  width: 340,
   height: 530,
   title: 'Burmese Content',
   themeColors: true,
