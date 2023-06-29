@@ -34,12 +34,6 @@ export default defineConfig(() => {
         /* This will change window focus to figma.app after file changes. 
         This will only work in macOS */
         hotReload: true,
-        remoteAction: {
-          name: '$action',
-          actionPath: '@/controller',
-          handlerPath: '@/ui/utils',
-          include: 'src/ui',
-        },
       }),
     ],
   };
