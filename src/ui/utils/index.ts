@@ -1,8 +1,10 @@
-import enNames from '@/name-en.json';
-import mmNames from '@/name-mm.json';
+import enNames from '@/data/name-en.json';
+import mmNames from '@/data/name-mm.json';
+
 export function $action(type: string, payload?: any) {
   parent.postMessage({ pluginMessage: { type, payload } }, '*');
 }
+
 export const tabs = ['Home', 'Text', 'Illustrations', 'Add'] as const;
 export type Tab = (typeof tabs)[number];
 
