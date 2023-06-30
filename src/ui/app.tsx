@@ -5,8 +5,6 @@ import { Messenger } from '@/ui/utils/messenger';
 import { activeTab } from '@/ui/utils/states';
 
 export function App() {
-  const messenger = Messenger();
-
   return (
     <>
       <Navbar />
@@ -18,7 +16,7 @@ export function App() {
               <Content
                 name={content.name}
                 description={content.description}
-                onClick={() => messenger.fillText(content.contents)}
+                onClick={() => Messenger.fillText(content.contents)}
               />
             ))}
         </section>
