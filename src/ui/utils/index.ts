@@ -1,5 +1,6 @@
 import enNames from '@/data/name-en.json';
 import mmNames from '@/data/name-mm.json';
+import mmPronouns from '@/data/pronoun-mm.json';
 
 export function $action(type: string, payload?: any) {
   parent.postMessage({ pluginMessage: { type, payload } }, '*');
@@ -37,7 +38,7 @@ export const contentTypes: ContentType[] = [
   {
     name: 'နာမ်စား',
     description: 'မြန်မာစာလုံးအမည်များ၏စာရင်း',
-    contents: mmNames,
+    contents: mmPronouns,
     group: ['Home', 'Text'],
   },
   {
