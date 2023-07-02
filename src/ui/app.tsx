@@ -1,6 +1,6 @@
 import Content from '@/ui/components/Content';
 import Navbar from '@/ui/components/Navbar';
-import { contentTypes } from '@/ui/utils';
+import { contentTypes } from '@/ui/utils/data';
 import { Messenger } from '@/ui/utils/messenger';
 import { activeTab } from '@/ui/utils/states';
 

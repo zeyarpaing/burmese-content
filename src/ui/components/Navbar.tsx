@@ -1,4 +1,4 @@
-import { tabs } from '@/ui/utils';
+import { tabs } from '@/ui/utils/data';
 import { activeTab } from '@/ui/utils/states';
 
 type Props = {};
