@@ -1,6 +1,7 @@
 import enNames from '@/data/name-en.json';
 import mmNames from '@/data/name-mm.json';
 import mmPronouns from '@/data/pronoun-mm.json';
+import enPronouns from '@/data/pronoun-en.json';
 
 export const tabs = ['Home', 'Text', 'Illustrations', 'Add'] as const;
 export type Tab = (typeof tabs)[number];
@@ -28,7 +29,7 @@ export const contentTypes: ContentType[] = [
   {
     name: 'Pronouns',
     description: 'A list of burmese pronouns in English',
-    contents: enNames,
+    contents: enPronouns,
     group: ['Home', 'Text'],
   },
   {
