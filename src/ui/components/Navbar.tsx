@@ -5,7 +5,7 @@ type Props = {};
 export default function Navbar({}: Props) {
   return (
     <nav class="sticky top-0 w-full dark:bg-neutral-800 bg-white">
-      <ul class="flex justify-between px-2 py-1">
+      {/* <ul class="flex justify-between px-2 py-1">
         {tabs.map((tab) => (
           <li>
             <button
@@ -20,8 +20,8 @@ export default function Navbar({}: Props) {
             </button>
           </li>
         ))}
-      </ul>
-      <section class="mx-2 relative">
+      </ul> */}
+      <section class="mx-2 mt-2 relative">
         <svg
           class="absolute top-1/2 -translate-y-1/2 left-0 mx-2"
           width="20"

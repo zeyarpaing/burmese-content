@@ -11,7 +11,7 @@ export function App() {
       <main class="w-full my-2">
         <section class="[&>button:not(&>button:last-child)]:border-b [&>button:not(&>button:last-child)]:border-b-neutral-400/40">
           {contentTypes
-            .filter((ct) => ct.group?.includes(activeTab.value))
+            // .filter((ct) => ct.group?.includes(activeTab.value))
             .map((content) => (
               <Content
                 name={content.name}
