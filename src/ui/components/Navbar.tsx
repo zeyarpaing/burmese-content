@@ -1,6 +1,3 @@
-import { tabs } from '@/ui/data';
-import { activeTab } from '@/ui/states';
-
 type Props = {};
 export default function Navbar({}: Props) {
   return (

@@ -8,9 +8,16 @@ type Props = JSX.HTMLAttributes<HTMLButtonElement> & {
 
 export default function Content({ contentType: content, ...props }: Props) {
   return (
-    <div class="flex">
+    <div
+      // style={{
+      //   background: `linear-gradient(130deg, #F4EAD0 0%, #F4EAD0 50.57%, #F5EACC 100%)`,
+      // }}
+
+      class="flex border border-amber-500 text-xs text-neutral-900 mx-2 my-1 rounded-md bg-gradient-to-r from-amber-300 dark:from-amber-100  via-amber-200 dark:via-yellow-50 to-amber-200 dark:to-yellow-50 "
+    >
       <button
-        class="w-full py-2.5 px-2 text-left text-xs hover:bg-amber-200/30 rounded-none"
+        // linear-gradient(130deg, #D9F0F0 0%, #D0E9E9 50.57%, #C2E4E4 100%)
+        class="text-left w-full hover:bg-cyan-500/20  py-2.5 px-2"
         // class="bg-cyan-400 text-black rounded-lg w-full border-2"
         onClick={() => Messenger.fillText(Object.values(content.contents).flat())}
         {...props}
