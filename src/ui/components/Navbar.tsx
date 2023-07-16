@@ -1,5 +1,5 @@
-import { tabs } from '@/ui/utils/data';
-import { activeTab } from '@/ui/utils/states';
+import { tabs } from '@/ui/data';
+import { activeTab } from '@/ui/states';
 
 type Props = {};
 export default function Navbar({}: Props) {

@@ -1,4 +1,4 @@
-import { ContentType } from '@/ui/utils/data';
+import { ContentType } from '@/ui/data';
 import { Messenger } from '@/ui/utils/messenger';
 import { JSX } from 'preact';
 
