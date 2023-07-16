@@ -1,30 +1,33 @@
-import enNames from '@/data/name-en.json';
+import maleNamesEn from '@/data/name-m-en.json';
+import femaleNamesEn from '@/data/name-f-en.json';
 import mmNames from '@/data/name-mm.json';
 import mmPronouns from '@/data/pronoun-mm.json';
 import enPronouns from '@/data/pronoun-en.json';
 
-export const tabs = ['Home', 'Text', 'Illustrations', 'Add'] as const;
-export type Tab = (typeof tabs)[number];
+// export const tabs = ['Home', 'Text', 'Illustrations', 'Add'] as const;
+// export type Tab = (typeof tabs)[number];
 
 export type ContentType = {
   name: string;
   description?: string;
-  contents: string[];
-  group?: Tab[];
+  subActions?: string[];
+  contents: Record<string, string[]>;
 };
 
 export const contentTypes: ContentType[] = [
   {
     name: 'Name',
     description: 'burmese names in English',
-    contents: enNames,
-    // group: ['Home', 'Text'],
+    subActions: ['Male', 'Female'],
+    contents: {
+      Male: maleNamesEn,
+      Female: femaleNamesEn,
+    },
   },
   {
     name: 'အမည်',
     description: 'မြန်မာအမည်များ',
     contents: mmNames,
-    // group: ['Home', 'Text'],
   },
   {
     name: 'Pronouns',
