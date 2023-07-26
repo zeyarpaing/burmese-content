@@ -38,19 +38,19 @@ export const contentTypes: ContentType[] = [
   {
     name: 'Pronouns',
     description: 'Pronouns in English',
-    contents: enPronouns,
+    contents: { all: enPronouns },
     // group: ['Home', 'Text'],
   },
   {
     name: 'နာမ်စား',
     description: 'Pronouns in Burmese',
-    contents: mmPronouns,
+    contents: { all: mmPronouns },
     // group: ['Home', 'Text'],
   },
   {
     name: 'Lorem ipsum (မြန်မာ)',
     description: 'ကျပန်းမြန်မာစာ',
-    contents: [],
+    contents: { all: [] },
     // group: ['Home', 'Text'],
   },
 ];
