@@ -6,6 +6,11 @@ import femaleNamesMm from '@/data/name-f-mm.json';
 import mmPronouns from '@/data/pronoun-mm.json';
 import enPronouns from '@/data/pronoun-en.json';
 
+import enAddress from '@/data/address-en.json';
+import mmAddress from '@/data/address-mm.json';
+import enMobile from '@/data/mobile-en.json';
+import mmMobile from '@/data/mobile-mm.json';
+
 // export const tabs = ['Home', 'Text', 'Illustrations', 'Add'] as const;
 // export type Tab = (typeof tabs)[number];
 
@@ -36,6 +41,32 @@ export const contentTypes: ContentType[] = [
     },
   },
   {
+    name: 'Address',
+    description: 'Address in English',
+    contents: { all: enAddress },
+  },
+  {
+    name: 'လိပ်စာ',
+    description: 'Address in Burmese',
+    contents: { all: mmAddress },
+  },
+  {
+    name: 'Mobile',
+    description: 'Mobile numbers in English',
+    contents: { all: enMobile },
+  },
+  {
+    name: 'ဖုန်းနံပါတ်',
+    description: 'Mobile numbers in Burmese',
+    contents: { all: mmMobile },
+  },
+  {
+    name: 'Lorem ipsum (မြန်မာ)',
+    description: 'ကျပန်းမြန်မာစာ',
+    contents: { all: [] },
+    // group: ['Home', 'Text'],
+  },
+  {
     name: 'Pronouns',
     description: 'Pronouns in English',
     contents: { all: enPronouns },
@@ -45,12 +76,6 @@ export const contentTypes: ContentType[] = [
     name: 'နာမ်စား',
     description: 'Pronouns in Burmese',
     contents: { all: mmPronouns },
-    // group: ['Home', 'Text'],
-  },
-  {
-    name: 'Lorem ipsum (မြန်မာ)',
-    description: 'ကျပန်းမြန်မာစာ',
-    contents: { all: [] },
     // group: ['Home', 'Text'],
   },
 ];

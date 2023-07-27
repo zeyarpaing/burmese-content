@@ -17,6 +17,7 @@ export default function Content({ contentType: content, ...props }: Props) {
         class="text-left w-full hover:bg-neutral-600/50  py-2.5 px-2"
         onClick={() => Messenger.fillText(Object.values(content.contents).flat())}
         {...props}
+        title={content.description}
       >
         <p class="font-bold">{content.name}</p>
         <small>{Object.values(content.contents).flat().slice(0, 4).join(', ')}, ...</small>
