@@ -1,10 +1,9 @@
 import { ContentType } from '@/ui/data';
 import { Messenger } from '@/ui/utils/messenger';
 import { useSignal } from '@preact/signals';
-import { JSX } from 'preact';
-import { useRef } from 'preact/hooks';
+import { ComponentProps } from 'preact';
 
-type Props = JSX.HTMLAttributes<HTMLButtonElement> & {
+type Props = ComponentProps<'button'> & {
   contentType: ContentType;
 };
 
@@ -20,7 +19,9 @@ export default function Content({ contentType: content, ...props }: Props) {
         title={content.description}
       >
         <p class="font-bold">{content.name}</p>
-        <small>{Object.values(content.contents).flat().slice(0, 4).join(', ')}, ...</small>
+        <small>
+          {Object.values(content.contents).flat().slice(0, 4).join(', ').slice(0, 90)} ...
+        </small>
       </button>
       {Object.keys(content.contents).length > 1 && (
         <button
@@ -50,9 +51,10 @@ export default function Content({ contentType: content, ...props }: Props) {
                   : 'invisible opacity-0 translate-y-0'
               }`}
             >
-              {Object.entries(content.contents).map(([label, values]) => (
+              {Object.entries(content.contents).map(([label, values], idx) => (
                 <button
-                  class="w-full text-left hover:bg-neutral-600 px-4 py-2"
+                  key={idx}
+                  class="w-full text-left hover:bg-neutral-600 focus-visible:bg-neutral-600 px-4 py-2"
                   onClick={() => Messenger.fillText(values)}
                 >
                   {label}
