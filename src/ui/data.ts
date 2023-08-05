@@ -11,6 +11,8 @@ import mmAddress from '@/data/address-mm.json';
 import enMobile from '@/data/mobile-en.json';
 import mmMobile from '@/data/mobile-mm.json';
 
+import mmRandom from '@/data/random-mm.json';
+
 // export const tabs = ['Home', 'Text', 'Illustrations', 'Add'] as const;
 // export type Tab = (typeof tabs)[number];
 
@@ -63,7 +65,9 @@ export const contentTypes: ContentType[] = [
   {
     name: 'Lorem ipsum (မြန်မာ)',
     description: 'ကျပန်းမြန်မာစာ',
-    contents: { all: [] },
+    contents: {
+      all: mmRandom,
+    },
     // group: ['Home', 'Text'],
   },
   {
