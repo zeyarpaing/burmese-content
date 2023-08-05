@@ -1,7 +1,6 @@
 import Content from '@/ui/components/Content';
 import Navbar from '@/ui/components/Navbar';
 import { contentTypes } from '@/ui/data';
-import { Messenger } from '@/ui/utils/messenger';
 
 export function App() {
   return (
