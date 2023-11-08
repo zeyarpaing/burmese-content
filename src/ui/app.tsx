@@ -1,6 +1,6 @@
 import Content from '@/ui/components/Content';
 import Navbar from '@/ui/components/Navbar';
-import { contentTypes } from '@/ui/data';
+import { contentTypes } from '@/data';
 
 export function App() {
   return (

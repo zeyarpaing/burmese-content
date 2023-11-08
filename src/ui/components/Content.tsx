@@ -1,4 +1,4 @@
-import { ContentType } from '@/ui/data';
+import { ContentType } from '@/data';
 import { Messenger } from '@/ui/utils/messenger';
 import { useSignal } from '@preact/signals';
 import { ComponentProps } from 'preact';
