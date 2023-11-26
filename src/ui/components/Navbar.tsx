@@ -1,24 +1,8 @@
 type Props = {};
 export default function Navbar({}: Props) {
   return (
-    <nav class="sticky top-0 w-full dark:bg-neutral-800 bg-white">
-      {/* <ul class="flex justify-between px-2 py-1">
-        {tabs.map((tab) => (
-          <li>
-            <button
-              class={`px-4 border rounded-md py-1.5 ${
-                activeTab.value === tab
-                  ? 'text-neutral-900 bg-amber-300 border-amber-400'
-                  : ' border-transparent hover:bg-amber-200/30'
-              }`}
-              onClick={() => (activeTab.value = tab)}
-            >
-              {tab}
-            </button>
-          </li>
-        ))}
-      </ul> */}
-      <section class="mx-2 mt-2 relative">
+    <nav class="sticky top-0 z-10 py-2 w-full dark:bg-neutral-800 bg-white">
+      <section class="mx-2 relative">
         <svg
           class="absolute top-1/2 -translate-y-1/2 left-0 mx-2 w-5 h-5"
           xmlns="http://www.w3.org/2000/svg"

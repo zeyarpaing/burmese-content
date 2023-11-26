@@ -3,10 +3,13 @@
     "baseUrl": ".",
     "target": "ESNext",
     "module": "ESNext",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable", "ESNext"],
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
     "skipLibCheck": true,
-
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
@@ -15,22 +18,23 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "jsxImportSource": "preact",
-
     /* Linting */
     "strict": true,
-    // "noUnusedLocals": 'warn',
-    // "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "paths": {
-      "@/*": ["src/*"],
+      "@/*": [
+        "src/*"
+      ],
     },
-
     /* Figma */
     "typeRoots": [
       "./node_modules/@types",
       "./node_modules/@figma"
     ]
   },
-  "include": ["src", "./"],
+  "include": [
+    "src",
+    "./"
+  ],
 }

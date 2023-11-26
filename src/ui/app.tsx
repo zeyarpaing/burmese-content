@@ -7,7 +7,7 @@ export function App() {
     <>
       <Navbar />
       <main class="w-full my-2">
-        <section class="[&>button:not(&>button:last-child)]:border-b [&>button:not(&>button:last-child)]:border-b-neutral-400/40">
+        <section class="flex flex-col space-y-2 mx-2">
           {contentTypes.map((contentType) => (
             <Content key={contentType.name} contentType={contentType} />
           ))}
