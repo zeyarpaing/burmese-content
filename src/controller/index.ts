@@ -1,4 +1,3 @@
-// This shows the HTML page in "ui.html".
 figma.showUI(__html__, {
   width: 340,
   height: 530,
@@ -6,7 +5,7 @@ figma.showUI(__html__, {
   themeColors: true,
 });
 
-export const $action = {
+export const $actions = {
   fillText: (payload: string[]) => {
     const length = payload.length;
     figma.currentPage.selection.forEach((node) => {
@@ -15,9 +14,11 @@ export const $action = {
 
       if (node.type === 'TEXT') {
         wrapperNode = node;
+        console.log('text box height: ', wrapperNode.height);
         if (typeof wrapperNode.fontName != 'symbol') {
           font = wrapperNode.fontName;
           figma.loadFontAsync(font).then(() => {
+            wrapperNode.textAutoResize = 'TRUNCATE';
             wrapperNode.characters = payload[Math.floor(Math.random() * length)];
           });
         }
@@ -41,11 +42,11 @@ export const $action = {
 } as const;
 
 figma.ui.onmessage = (msg: {
-  type: keyof typeof $action;
-  payload: Parameters<(typeof $action)[keyof typeof $action]>;
+  type: keyof typeof $actions;
+  payload: Parameters<(typeof $actions)[keyof typeof $actions]>;
 }) => {
   // @ts-ignore
-  $action[msg.type](msg.payload);
+  $actions[msg.type](msg.payload);
 };
 
-export type Actions = typeof $action;
+export type Actions = typeof $actions;

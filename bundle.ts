@@ -76,6 +76,7 @@ export function bundlePlugin({ hotReload }: Options): Plugin {
         informIgnored(name);
       }
 
+      exec('cp ./manifest.json ./dist/manifest.json');
       if (hotReload) {
         exec('sh ./hot-reload.sh');
       }
