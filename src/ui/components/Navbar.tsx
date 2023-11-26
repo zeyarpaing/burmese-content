@@ -1,3 +1,5 @@
+import { searchKeyword } from '@/ui/states';
+
 type Props = {};
 export default function Navbar({}: Props) {
   return (
@@ -22,6 +24,9 @@ export default function Navbar({}: Props) {
           type="text"
           class="border border-neutral-400/50 rounded-md pl-10 py-2 bg-transparent w-full"
           placeholder="Search"
+          onInput={(e) => {
+            searchKeyword.value = e.currentTarget.value;
+          }}
         />
       </section>
     </nav>
