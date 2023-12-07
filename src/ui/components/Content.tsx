@@ -1,5 +1,5 @@
 import { ContentType } from '@/data';
-import { Messenger } from '@/ui/utils/messenger';
+import { Figma } from '@/ui/utils/figma';
 import { useSignal } from '@preact/signals';
 import { ComponentProps } from 'preact';
 
@@ -14,7 +14,13 @@ export default function Content({ contentType: content, ...props }: Props) {
     <div class="flex border dark:border-neutral-600/80 border-zinc-400 bg-zinc-100 dark:bg-neutral-800 rounded-md shadow-md">
       <button
         class="text-left w-full hover:bg-neutral-600/30  py-2.5 px-2"
-        onClick={() => Messenger.fillText(Object.values(content.contents).flat())}
+        onClick={() =>
+          Figma.fillText(
+            content.defaultAction
+              ? content.contents[content.defaultAction]
+              : Object.values(content.contents).flat()
+          )
+        }
         {...props}
         title={content.description}
       >
@@ -55,7 +61,7 @@ export default function Content({ contentType: content, ...props }: Props) {
                 <button
                   key={idx}
                   class="w-full text-left hover:bg-neutral-200 dark:hover:bg-neutral-600 focus-visible:bg-neutral-200 dark:focus-visible:bg-neutral-600 px-4 py-2"
-                  onClick={() => Messenger.fillText(values)}
+                  onClick={() => Figma.fillText(values)}
                 >
                   {label}
                 </button>

@@ -14,6 +14,11 @@ import mmMobile from '@/data/mobile-mm.json';
 import mmRandom from '@/data/random-mm.json';
 import enRandom from '@/data/random-en.json';
 
+import enDateShort from '@/data/date-short-en.json';
+import mmDateShort from '@/data/date-short-mm.json';
+import enDateCompact from '@/data/date-compact-en.json';
+import mmDateCompact from '@/data/date-compact-mm.json';
+
 // export const tabs = ['Home', 'Text', 'Illustrations', 'Add'] as const;
 // export type Tab = (typeof tabs)[number];
 
@@ -21,6 +26,7 @@ export type ContentType = {
   name: string;
   description?: string;
   subActions?: string[];
+  defaultAction?: string;
   contents: Record<string, string[]>;
 };
 
@@ -62,6 +68,26 @@ export const contentTypes: ContentType[] = [
     name: 'ဖုန်းနံပါတ်',
     description: 'Mobile numbers in Burmese',
     contents: { all: mmMobile },
+  },
+  {
+    name: 'Date',
+    description: '',
+    subActions: ['Short', 'Compact'],
+    defaultAction: 'Short',
+    contents: {
+      Short: enDateShort,
+      Compact: enDateCompact,
+    },
+  },
+  {
+    name: 'နေ့စွဲ',
+    description: '',
+    subActions: ['Short', 'Compact'],
+    defaultAction: 'Short',
+    contents: {
+      Short: mmDateShort,
+      Compact: mmDateCompact,
+    },
   },
   {
     name: 'ကျပန်းစာပိုဒ်',

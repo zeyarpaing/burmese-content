@@ -30,9 +30,13 @@ type Options = {
   hotReload?: boolean;
 };
 
+/**
+ * This is modified version of `vite-plugin-singlefile`
+ * https://github.com/richardtallent/vite-plugin-singlefile
+ */
 export function bundlePlugin({ hotReload }: Options): Plugin {
   return {
-    name: 'vite:bundle-figma',
+    name: 'vite:singlefile',
     config: _defaultConfig,
     enforce: 'post',
     generateBundle: (_, bundle) => {

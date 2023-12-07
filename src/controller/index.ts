@@ -14,11 +14,11 @@ export const $actions = {
 
       if (node.type === 'TEXT') {
         wrapperNode = node;
-        console.log('text box height: ', wrapperNode.height);
         if (typeof wrapperNode.fontName != 'symbol') {
           font = wrapperNode.fontName;
           figma.loadFontAsync(font).then(() => {
-            wrapperNode.textAutoResize = 'TRUNCATE';
+            // @ts-expect-error textTruncation is not in the text node type
+            wrapperNode.textTruncation = 'ENDING';
             wrapperNode.characters = payload[Math.floor(Math.random() * length)];
           });
         }
