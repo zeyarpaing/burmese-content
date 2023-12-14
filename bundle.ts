@@ -26,15 +26,13 @@ export function replaceCss(html: string, scriptFilename: string, scriptCode: str
 
 const informIgnored = (filename: string) => console.info(`Asset ignored inlining: ${filename}`);
 
-type Options = {
-  hotReload?: boolean;
-};
+// type Options = {};
 
 /**
  * This is modified version of `vite-plugin-singlefile`
  * https://github.com/richardtallent/vite-plugin-singlefile
  */
-export function bundlePlugin({ hotReload }: Options): Plugin {
+export function bundlePlugin(): Plugin {
   return {
     name: 'vite:singlefile',
     config: _defaultConfig,
@@ -81,9 +79,6 @@ export function bundlePlugin({ hotReload }: Options): Plugin {
       }
 
       exec('cp ./manifest.json ./dist/manifest.json');
-      if (hotReload) {
-        exec('sh ./hot-reload.sh');
-      }
     },
   };
 }
