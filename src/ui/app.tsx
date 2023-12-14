@@ -13,7 +13,7 @@ export function App() {
             ?.filter(
               (contentType) =>
                 !searchKeyword.value.trim() ||
-                contentType.name.toLowerCase().includes(searchKeyword.value.trim().toLowerCase())
+                contentType.keyword.toLowerCase().includes(searchKeyword.value.trim().toLowerCase())
             )
             .map((contentType) => (
               <Content key={contentType.name} contentType={contentType} />

@@ -3,28 +3,28 @@ import femaleNamesEn from '@/data/name-f-en.json';
 import maleNamesMm from '@/data/name-m-mm.json';
 import femaleNamesMm from '@/data/name-f-mm.json';
 
-import mmPronouns from '@/data/pronoun-mm.json';
-import enPronouns from '@/data/pronoun-en.json';
+import pronounsMm from '@/data/pronoun-mm.json';
+import pronounsEn from '@/data/pronoun-en.json';
 
-import enAddress from '@/data/address-en.json';
-import mmAddress from '@/data/address-mm.json';
-import enMobile from '@/data/mobile-en.json';
-import mmMobile from '@/data/mobile-mm.json';
+import addressEn from '@/data/address-en.json';
+import addressMm from '@/data/address-mm.json';
+import mobileEn from '@/data/mobile-en.json';
+import mobileMm from '@/data/mobile-mm.json';
 
-import mmRandom from '@/data/random-mm.json';
-import enRandom from '@/data/random-en.json';
+import randomMm from '@/data/random-mm.json';
+import randomEn from '@/data/random-en.json';
 
-import enDateShort from '@/data/date-short-en.json';
-import mmDateShort from '@/data/date-short-mm.json';
-import enDateCompact from '@/data/date-compact-en.json';
-import mmDateCompact from '@/data/date-compact-mm.json';
+import dateShortEn from '@/data/date-short-en.json';
+import dateShortMm from '@/data/date-short-mm.json';
+import dateCompactEn from '@/data/date-compact-en.json';
+import dateCompactMm from '@/data/date-compact-mm.json';
 
 // export const tabs = ['Home', 'Text', 'Illustrations', 'Add'] as const;
 // export type Tab = (typeof tabs)[number];
 
 export type ContentType = {
   name: string;
-  description?: string;
+  keyword: string;
   subActions?: string[];
   defaultAction?: string;
   contents: Record<string, string[]>;
@@ -33,7 +33,7 @@ export type ContentType = {
 export const contentTypes: ContentType[] = [
   {
     name: 'Name',
-    description: 'Burmese names in English',
+    keyword: 'name, အမည်, နာမည်',
     subActions: ['Male', 'Female'],
     contents: {
       Male: maleNamesEn,
@@ -42,7 +42,7 @@ export const contentTypes: ContentType[] = [
   },
   {
     name: 'အမည်',
-    description: 'Burmese names in Burmese',
+    keyword: 'name, အမည်, နာမည်',
     subActions: ['Male', 'Female'],
     contents: {
       Male: maleNamesMm,
@@ -51,68 +51,66 @@ export const contentTypes: ContentType[] = [
   },
   {
     name: 'Address',
-    description: 'Address in English',
-    contents: { all: enAddress },
+    keyword: 'address, လိပ်စာ, နေရပ်',
+    contents: { all: addressEn },
   },
   {
     name: 'လိပ်စာ',
-    description: 'Address in Burmese',
-    contents: { all: mmAddress },
+    keyword: 'address, လိပ်စာ, နေရပ်',
+    contents: { all: addressMm },
   },
   {
     name: 'Mobile',
-    description: 'Mobile numbers in English',
-    contents: { all: enMobile },
+    keyword: 'mobile, ဖုန်းနံပါတ်, phone',
+    contents: { all: mobileEn },
   },
   {
     name: 'ဖုန်းနံပါတ်',
-    description: 'Mobile numbers in Burmese',
-    contents: { all: mmMobile },
+    keyword: 'mobile, ဖုန်းနံပါတ်, phone',
+    contents: { all: mobileMm },
   },
   {
     name: 'Date',
-    description: '',
-    subActions: ['Short', 'Compact'],
-    defaultAction: 'Short',
+    keyword: 'date, နေ့စွဲ, ရက်စွဲ',
+    subActions: ['DD.MM.YYY', 'DD MMM YYYY'],
+    defaultAction: 'DD.MM.YYY',
     contents: {
-      Short: enDateShort,
-      Compact: enDateCompact,
+      'DD.MM.YYY': dateShortEn,
+      'DD MMM YYYY': dateCompactEn,
     },
   },
   {
     name: 'နေ့စွဲ',
-    description: '',
-    subActions: ['Short', 'Compact'],
-    defaultAction: 'Short',
+    keyword: 'date, နေ့စွဲ, ရက်စွဲ',
+    subActions: ['DD.MM.YYYY', 'DD MMM YYYY'],
+    defaultAction: 'DD.MM.YYY',
     contents: {
-      Short: mmDateShort,
-      Compact: mmDateCompact,
+      'DD.MM.YYY': dateShortMm,
+      'DD MMM YYYY': dateCompactMm,
     },
   },
   {
     name: 'ကျပန်းစာပိုဒ်',
-    description: 'ကျပန်းမြန်မာစာ',
+    keyword: 'random, lorem ipsum, ကျပန်း',
     contents: {
-      all: mmRandom,
+      all: randomMm,
     },
   },
   {
     name: 'Random Paragraph',
-    description: 'ကျပန်းမြန်မာစာ',
+    keyword: 'random, lorem ipsum, ကျပန်း',
     contents: {
-      all: enRandom,
+      all: randomEn,
     },
   },
   {
     name: 'Pronouns',
-    description: 'Pronouns in English',
-    contents: { all: enPronouns },
-    // group: ['Home', 'Text'],
+    keyword: 'pronouns, နာမ်စား',
+    contents: { all: pronounsEn },
   },
   {
     name: 'နာမ်စား',
-    description: 'Pronouns in Burmese',
-    contents: { all: mmPronouns },
-    // group: ['Home', 'Text'],
+    keyword: 'pronouns, နာမ်စား',
+    contents: { all: pronounsMm },
   },
 ];

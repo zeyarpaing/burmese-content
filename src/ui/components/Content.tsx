@@ -22,9 +22,8 @@ export default function Content({ contentType: content, ...props }: Props) {
           )
         }
         {...props}
-        title={content.description}
       >
-        <p class="font-bold opacity-95">{content.name}</p>
+        <h2 class="font-bold opacity-95">{content.name}</h2>
         <small class="text-zinc-500 dark:text-zinc-400">
           {Object.values(content.contents).flat().slice(0, 4).join(', ').slice(0, 90)} ...
         </small>
@@ -51,7 +50,7 @@ export default function Content({ contentType: content, ...props }: Props) {
               <div class="fixed z-[5] bg-neutral-900/20 w-full h-screen inset-0"></div>
             )}
             <div
-              class={`absolute z-10 right-0 top-0 mt-12 transition-all dark:bg-neutral-700 dark:text-white text-black/95 bg-zinc-100 rounded-md shadow-md overflow-hidden ${
+              class={`absolute w-max z-10 right-0 top-0 mt-12 transition-all dark:bg-neutral-700 dark:text-white text-black/95 bg-zinc-100 rounded-md shadow-md overflow-hidden ${
                 showMoreOptions.value
                   ? 'visible opacity-100 translate-y-1'
                   : 'invisible opacity-0 translate-y-0'
