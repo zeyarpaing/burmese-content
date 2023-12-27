@@ -19,9 +19,6 @@ import dateShortMm from '@/data/date-short-mm.json';
 import dateCompactEn from '@/data/date-compact-en.json';
 import dateCompactMm from '@/data/date-compact-mm.json';
 
-// export const tabs = ['Home', 'Text', 'Illustrations', 'Add'] as const;
-// export type Tab = (typeof tabs)[number];
-
 export type ContentType = {
   name: string;
   keyword: string;
